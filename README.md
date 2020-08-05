@@ -17,4 +17,4 @@ https://hub.docker.com/repository/docker/philibooy/sorty
 TO-DO:
 - Wenn eine Datei keine Metadatei enthält soll sie in einen extro ordner verschoben werden
 - besser lesbaren log.
-- zeiterfassung für die bearbeitungsdauer
+- Zeiterfassung für die Bearbeitungsdauer
