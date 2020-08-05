@@ -13,3 +13,8 @@ Werden keine Metadaten gefunden, wird die Datei übersprungen.
 
 Ich habe auch ein Dockerimage mit dem Script erstellt, da ich es auf einem Unraid server nutze.
 https://hub.docker.com/repository/docker/philibooy/sorty
+
+TO-DO:
+- Wenn eine Datei keine Metadatei enthält soll sie in einen extro ordner verschoben werden
+- besser lesbaren log.
+- zeiterfassung für die bearbeitungsdauer
