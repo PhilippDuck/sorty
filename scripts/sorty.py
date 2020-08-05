@@ -11,11 +11,14 @@ from hachoir.metadata import extractMetadata
 from hachoir.core import config as HachoirConfig
 HachoirConfig.quiet = True
 
+#Location with uploads
 searchPath = "/mymedia/Smartphone"
+#location with new datastructure und names
 workingPath = "/mymedia"
+#used datatypes
 dataTypes = [".jpg", ".JPG", ".mp4", ".MP4", ".mov", ".MOV"]
-#locale.setlocale(locale.LC_ALL, "")
-locale.setlocale(locale.LC_ALL, "de_DE.utf8")
+#language used for new filenames
+locale.setlocale(locale.LC_ALL, "de_DE")
 
 
 def scan(path):
@@ -29,13 +32,14 @@ def scan(path):
                 try:
                     dateTime = creation_date(entry.path)
                 except:
-                    print("Zugriff auf Metadaten fehlgeschlagen.")
+                    print("{:20} {} no metadata found. skiped".format(nowStr, entry.name))
                     break
+                locale.setlocale(locale.LC_ALL, "de_DE")
                 targetDir = workingPath + "/" + dateTime.strftime("%Y/%Y_%m %B/")
                 newName = dateTime.strftime("%Y-%m-%d_%H%M%S")
                 moveFileToDir(entry, entry.path, newName, dataType, targetDir)
                 counterEdited += 1
-    print("{} Dateien wurden gefunden. {} Dateien konnten bearbeitet werden.".format(str(counter), str(counterEdited)))
+    print("{} files found. {} files processed".format(str(counter), str(counterEdited)))
 
 
 def moveFileToDir(entry, filePath, newName, dataType, targetDir):
@@ -44,7 +48,7 @@ def moveFileToDir(entry, filePath, newName, dataType, targetDir):
     now = datetime.datetime.now()
     nowStr = now.strftime("%Y-%m-%d %H:%M:%S")
     try:
-        os.makedirs(targetDir)
+        os.makedirs(targetDir, mode=0o777)
         #print(f"{nowStr:20} Created dir {targetDir}")
         print("{:20} Created dir {}".format(nowStr, targetDir))
     except:
