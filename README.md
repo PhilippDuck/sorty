@@ -1,7 +1,7 @@
 # sorty
 pythonscript that uses modul hachoir to rename and sort mediafiles
 
-Das Script extrahiert aus Mediadateien das "creation_date" und ändert dementsprechend den Dateinamen.
+Das Script extrahiert aus verschiedenen Mediadateien (im script editierbar .jpg, .mov etc....) das "creation_date" und ändert dementsprechend den Dateinamen.
 
 BEISPIEL: IMG_7115.jpg -> 2020-07-21_110606.jpg
 
