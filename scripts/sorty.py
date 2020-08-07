@@ -32,7 +32,9 @@ def scan(path):
                 try:
                     dateTime = creation_date(entry.path)
                 except:
-                    print("{:20} {} no metadata found. skiped".format(nowStr, entry.name))
+                    print("{:20} No metadata found. -> {}".format(nowStr, entry.name))
+                    nameSplitted = entry.name.split(".")
+                    moveFileToDir(entry, entry.path, nameSplitted[0], dataType, workingPath + "/" + "noMetadata")
                     break
                 locale.setlocale(locale.LC_ALL, "de_DE")
                 targetDir = workingPath + "/" + dateTime.strftime("%Y/%Y_%m %B/")
