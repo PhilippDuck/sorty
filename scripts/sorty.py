@@ -16,7 +16,7 @@ searchPath = "/mymedia/Smartphone"
 #location with new datastructure und names
 workingPath = "/mymedia"
 #used datatypes
-dataTypes = [".jpg", ".JPG", ".mp4", ".MP4", ".mov", ".MOV"]
+dataTypes = [".jpg", ".JPG", ".mp4", ".MP4", ".mov", ".MOV", ".png", ".PNG"]
 #language used for new filenames
 locale.setlocale(locale.LC_ALL, "de_DE")
 
